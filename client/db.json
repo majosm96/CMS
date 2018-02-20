@@ -1,0 +1,15 @@
+{
+  "todos": [
+    {
+      "id": "e9251ee0-1593-11e8-9e63-0b669ac12fcd",
+      "name": "",
+      "password": ""
+    },
+    {
+      "id": "f1582930-1594-11e8-99dc-8f593ca2e3f5",
+      "name": "majo",
+      "password": "majo",
+      "database": "majo"
+    }
+  ]
+}
