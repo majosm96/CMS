@@ -7,19 +7,19 @@ const SetUpForm = props => (
   <div className="form-container" id="form-container">
     <div className="form-basic">
       <div className="form-item">
-        <label htmlFor="newUserName">UserName
+        <label htmlFor="newUserName">
           <Input type="text" name="newUserName" onChange={props.handleInputChange} id="newUserName" required="true" placeholder="User name" />
         </label>
 
       </div>
       <div className="form-item">
-        <label htmlFor="newUserPassword">Password
+        <label htmlFor="newUserPassword">
           <Input type="text" name="newUserPassword" onChange={props.handleInputChange} id="newUserPassword" required="true" placeholder="Password" />
         </label>
 
       </div>
       <div className="form-item">
-        <label htmlFor="newDataBase">DataBase Name
+        <label htmlFor="newDataBase">
           <Input type="text" name="newDataBase" onChange={props.handleInputChange} id="newDataBase" required="true" placeholder="Data Base" />
         </label>
       </div>
