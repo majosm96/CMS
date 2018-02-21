@@ -1,0 +1,35 @@
+.l-content {
+    margin: 0 auto;
+    width: 100%;
+
+    @include query(500px) {
+        width: 85%;
+    }
+
+    @include query(800px) {
+        width: 65%;
+    }
+}
+
+.l-group {
+    @include micro-clearfix;
+}
+
+.group {
+    @include micro-clearfix;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.section-wrap {
+    padding: 4rem $space-base;
+
+    @include query(600px) {
+        padding: $space-x-large $space-medium;
+    }
+}
+
+.wrapper {
+    background-color: #fff;
+    position: relative;
+}

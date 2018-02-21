@@ -17,11 +17,15 @@ module.exports = {
     loaders: [
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.(s*)css$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+      { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'url-loader', exclude: /node_modules/ },
     ],
   },
   devServer: {
     port: 9090,
   },
-  plugins: [HtmlWebpackPluginConfig],
+  plugins: [
+    HtmlWebpackPluginConfig,
+  ],
 };
 

@@ -7,9 +7,11 @@ import ReactDOM from 'react-dom';
 // import Semantic from 'semantic-ui-css/semantic.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-
 import store from './store';
 import App from './App';
+
+require('../sass/style.scss');
+
 
 ReactDOM.render(
   <BrowserRouter>

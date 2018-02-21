@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const morgan = require('morgan')
 const cors = require('cors')
 const DB_QUERY_STRING = process.env.DB
-  || 'mongodb://localhost:27017/csmdatabase'
+  || 'mongodb://localhost:27017/csmdatabase' 
 
 const setupRoutes = require('./routes/setups')
 const app = express()

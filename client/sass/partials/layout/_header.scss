@@ -1,0 +1,67 @@
+.site-header {
+    position: fixed;
+    width: 98.8%;
+    z-index: 100;
+    top: 0rem;
+    border-top: 1px solid $main-color;
+
+    @include query(371px) {
+        width: 99.5%;
+    }
+
+    @include query(495px) {
+        width: 99.58%;
+    }
+
+    @include query(700px) {
+        width: 99.69%
+    }
+
+    @include query(900px) {
+        width: 99.80%
+    }
+}
+
+.site-nav {
+    padding: .25em 1rem;
+}
+
+.logo {
+    border: none;
+    cursor: pointer;
+    float: left;
+    margin: 0.5rem;
+    width: 45px;
+
+    img {
+        margin-top: 8px;
+    }
+
+    @include query(600px) {
+        margin: $space-base;
+    }
+}
+
+.menu-img {
+    cursor: pointer;
+    float: right;
+    margin: 0.8rem 1.5rem;
+    width: 39px;
+
+    @include query(600px) {
+        margin: $space-base $space-medium;
+    }
+}
+
+.menu-img--close {
+    margin: 0.8rem 1.5rem;
+    width: 30px;
+    
+    @include query(600px) {
+        margin: 1.3rem 2.5rem;
+    }
+}
+
+.header-item {
+    width: 50%;
+}

@@ -1,0 +1,81 @@
+.navigation {
+    position: fixed;
+    border: 2px solid #000;
+    top: 0;
+    height: 100vh;
+    z-index: 9;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    display: none;
+}
+
+.right-nav {
+    position: relative;
+    text-align: center;
+    display: block;
+    height: 100%;
+    float: right;
+    width: 100%;
+
+  &::before,
+  .inner-nav {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &::before {
+    content: '';
+    width: 0;
+    height: 100%;
+  }
+}
+  
+
+.inner-nav {
+    list-style: none;
+    padding: 2rem;
+    margin: 0 auto;
+    text-align: center;
+
+    li {
+        padding: $space-medium;
+    }
+    
+    a {
+        color: #fff;
+        border: none;
+        font-size: 2rem;
+        font-weight: $font-family-base-bold-weight;
+    }
+
+    @include query(500px) {
+      a {
+        font-size: 2.5rem;
+      }
+    }
+}
+
+.underline {
+    position: relative;
+  
+    &:hover,
+    &:focus,
+    &:active {
+        cursor: pointer;
+        &:after {
+        width: 100%;
+        }
+    }
+  
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0; bottom: -3px;
+        height: 3px;
+        background-color: $yellow;
+        width: 0;
+        transition: width .4s;
+    }
+}

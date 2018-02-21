@@ -50,7 +50,7 @@ class SetUpContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="section-wrap">
         <h1>SET UP </h1>
         <SetUpForm
           handleSubmit={this.handleSubmit}
