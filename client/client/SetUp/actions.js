@@ -1,5 +1,5 @@
 // imports
-import uuid from 'uuid/v1';
+// import uuid from 'uuid/v1';
 
 // API URL Constant
 const API_URL = 'http://localhost:8081/api/v2/setups';
