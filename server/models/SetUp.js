@@ -7,5 +7,5 @@ const setupSchema = mongoose.Schema({
   // created: { type: Date, default: Date.now }
 })
 
-const SetUp = mongoose.model("SetUp", setupSchema)
+const SetUp = mongoose.model('setup', setupSchema)
 module.exports = SetUp

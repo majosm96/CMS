@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { func, array } from 'prop-types';
+import { func, array, object } from 'prop-types';
 
 import SinglePageForm from './SinglePageForm';
 import SinglePageTable from './SinglePageTable';
@@ -21,7 +21,7 @@ class SinglePageContainer extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
-    // this.showFormEdit = this.showFormEdit.bind(this);
+    this.singlePageView = this.singlePageView.bind(this);
   }
 
 
@@ -47,11 +47,11 @@ class SinglePageContainer extends Component {
 
     this.props.addPage(page);
 
-    this.setState = {
+    this.setState({
       newPageName: '',
       newPageUrl: '',
       newPageText: '',
-    };
+    });
   }
 
   handleDelete(e) {
@@ -59,17 +59,9 @@ class SinglePageContainer extends Component {
     this.props.deletePage(e.target.parentNode.parentNode.getAttribute('id'));
   }
 
-  // showFormEdit() {
-  //   const form = document.getElementById('form-container-edit');
-
-  //   if (form.style.display == 'block') {
-  //     // if is menuBox displayed, hide it
-  //     form.style.display = 'none';
-  //   } else {
-  //     // if is menuBox hidden, display it
-  //     form.style.display = 'block';
-  //   }
-  // }
+  singlePageView(e) {
+    console.log(e)
+  }
 
   render() {
     return (
@@ -84,6 +76,7 @@ class SinglePageContainer extends Component {
               pages={this.props.pages}
               handleDelete={this.handleDelete}
               showFormEdit={this.showFormEdit}
+              singlePageView={this.singlePageView}
             />
           </div>
         </div>
@@ -112,6 +105,7 @@ function mapDispatchToProps(dispatch) {
 
 SinglePageContainer.propTypes = {
   pages: array,
+  history: object,
   loadData: func,
   addPage: func,
   deletePage: func,
@@ -120,6 +114,7 @@ SinglePageContainer.propTypes = {
 
 SinglePageContainer.defaultProps = {
   pages: [],
+  history: null,
   loadData: () => {},
   addPage: () => {},
   deletePage: () => {},

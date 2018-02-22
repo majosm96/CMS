@@ -7,7 +7,7 @@ import SinglePageTemplate from './SinglePageTemplate';
 
 const SinglePageTable = (props) => {
   return (
-    <Table class="ui celled padded table">
+    <Table className="ui celled padded table">
       <thead>
         <tr>
           <th>Title</th>
@@ -19,7 +19,7 @@ const SinglePageTable = (props) => {
           key={item.id}
           page={item}
           handleDelete={props.handleDelete}
-          showFormEdit={props.showFormEdit}
+          singlePageView={props.singlePageView}
         />))}
       </tbody>
     </Table>
@@ -29,13 +29,13 @@ const SinglePageTable = (props) => {
 SinglePageTable.propTypes = {
   pages: array,
   handleDelete: func,
-  showFormEdit: func,
+  singlePageView: func,
 };
 
 SinglePageTable.defaultProps = {
   pages: [],
   handleDelete: () => {},
-  showFormEdit: () => {},
+  singlePageView: () => {},
 };
 
 export default SinglePageTable;

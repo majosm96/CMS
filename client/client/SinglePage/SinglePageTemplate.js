@@ -1,9 +1,9 @@
 import React from 'react';
-import { object } from 'prop-types';
+import { object, func } from 'prop-types';
 
 const SinglePageTemplate = (props) => {
   return (
-    <tr className="table-row" id={props.page.id}>
+    <tr onClick={props.singlePageView()} className="table-row" id={props.page.id}>
       <td>{props.page.name}</td>
       <td>{props.page.url}</td>
       <td>{props.page.text}</td>
@@ -12,10 +12,12 @@ const SinglePageTemplate = (props) => {
 };
 
 SinglePageTemplate.propTypes = {
+  singlePageView: func,
   page: object,
 };
 
 SinglePageTemplate.defaultProps = {
+  singlePageView: () => {},
   page: object,
 };
 

@@ -9,6 +9,7 @@ const DashboardContainer = () => (
         <div className="" style={{ textAlign: 'center', padding: '3rem' }}>
           <h2>WELCOME</h2>
           <p>The coolest and unusable CMS :)</p>
+          <a>Go to home</a>
         </div>
         <div className="dashboard-sidebar">
           <Link to="/SinglePage"><Button className="ui basic olive button">Add New Page</Button></Link>

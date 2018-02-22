@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
   res.send('SET UP API HOME PAGE 💩')
 })
 
-//Use Routes as 
+// Use Routes as 
 
 app.use('/api/v2/setups', setupRoutes)
 app.use('/api/v2/pages', pagesRoutes)
