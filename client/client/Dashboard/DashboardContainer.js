@@ -11,7 +11,9 @@ const DashboardContainer = () => (
           <p>The coolest and unusable CMS :)</p>
         </div>
         <div className="dashboard-sidebar">
-          <Link to="/SinglePage"><Button>Add new page</Button></Link>
+          <Link to="/SinglePage"><Button className="ui basic olive button">Add New Page</Button></Link>
+          <Button className="ui basic olive button">Add New Content</Button>
+          <Button className="ui basic olive button">Add New Media</Button>
         </div>
       </section>
     </div>

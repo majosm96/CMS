@@ -8,7 +8,7 @@ const SinglePageForm = props => (
     <div className="form-basic">
       <div className="form-item">
         <label htmlFor="newPageName">
-          <Input className="input--space" type="text" name="newPageName" onChange={props.handleInputChange} id="newPageName" required="true" placeholder="Page Name" />
+          <Input className="input--space" type="text" name="newPageName" onChange={props.handleInputChange} id="newPageName" required="true" placeholder="Title" />
         </label>
 
       </div>

@@ -1,16 +1,17 @@
 import React from 'react';
 import { array, func } from 'prop-types';
+import { Table } from 'semantic-ui-react';
 
 import SinglePageTemplate from './SinglePageTemplate';
 
 
 const SinglePageTable = (props) => {
   return (
-    <table className="table table-hover">
+    <Table class="ui celled padded table">
       <thead>
         <tr>
-          <td>Name</td>
-          <td>Url</td>
+          <th>Title</th>
+          <th>Url</th>
         </tr>
       </thead>
       <tbody>
@@ -21,7 +22,7 @@ const SinglePageTable = (props) => {
           showFormEdit={props.showFormEdit}
         />))}
       </tbody>
-    </table>
+    </Table>
   );
 };
 

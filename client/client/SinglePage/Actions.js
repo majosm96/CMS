@@ -1,7 +1,7 @@
 // imports
 import uuid from 'uuid/v1';
 
-const API_URL = 'http://localhost:3000/pages';
+const API_URL = 'http://localhost:8081/api/v2/pages';
 
 const GET_PAGES_REQUEST = 'GET_PAGES_REQUEST';
 const GET_PAGES_SUCCESS = 'GET_PAGES_SUCCESS';
