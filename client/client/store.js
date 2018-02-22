@@ -1,9 +1,10 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import ReduxThunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import { createLogger } from 'redux-logger';
 
 import SetUpReducer from './SetUp/SetUpReducer';
+import SinglePageReducer from './SinglePage/SinglePageReducer';
 
 const logger = createLogger({
   collapsed: true,
@@ -11,7 +12,13 @@ const logger = createLogger({
   diff: true,
 });
 
-const store = createStore(SetUpReducer, composeWithDevTools(applyMiddleware(
+const reducer = combineReducers({
+  SetUp: SetUpReducer,
+  SinglePage: SinglePageReducer,
+});
+
+
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(
   ReduxThunk,
   logger,
 )));

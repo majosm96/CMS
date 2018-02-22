@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import SetUpContainer from './SetUp/SetUpContainer';
 import DashboardContainer from './Dashboard/DashboardContainer';
+import SinglePageContainer from './SinglePage/SinglePageContainer';
 
 export default class App extends React.Component {
   render() {
@@ -11,7 +12,7 @@ export default class App extends React.Component {
         <Switch>
           <Route exact path="/" component={SetUpContainer} />
           <Route exact path="/Dashboard" component={DashboardContainer} />
-          <Route path="/test" render={() => <h1>Im a about page</h1>} />
+          <Route exact path="/SinglePage" component={SinglePageContainer} />
         </Switch>
       </div>);
   }

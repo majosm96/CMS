@@ -10,7 +10,8 @@
         "linebreak-style": 0,
         "react/forbid-prop-types": 0,
         "no-console": 0,
-        "arrow-body-style": 0
+        "arrow-body-style": 0,
+        "func-names": 0
     },
     "plugins": [
         "react",
