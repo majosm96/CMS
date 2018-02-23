@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { func, array, object } from 'prop-types';
 
 import SinglePageForm from './SinglePageForm';
+import SinglePageDetail from './SinglePageDetail';
 import SinglePageTable from './SinglePageTable';
 
 import { getPage, addPage, deletePage, updatePage } from './Actions';
@@ -21,9 +22,9 @@ class SinglePageContainer extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleView = this.handleView.bind(this);
     this.singlePageView = this.singlePageView.bind(this);
   }
-
 
   componentDidMount() {
     this.props.loadData();
@@ -59,8 +60,13 @@ class SinglePageContainer extends Component {
     this.props.deletePage(e.target.parentNode.parentNode.getAttribute('id'));
   }
 
+  handleView(page) {
+    this.props.updatePage(page);
+  }
+
   singlePageView(e) {
-    console.log(e)
+    e.preventDefault();
+    console.log(e.target.parentNode.parentNode.getAttribute('id'));
   }
 
   render() {
@@ -72,9 +78,11 @@ class SinglePageContainer extends Component {
               handleSubmit={this.handleSubmit}
               handleInputChange={this.handleInputChange}
             />
+            {/* <SinglePageDetail /> */}
             <SinglePageTable
               pages={this.props.pages}
               handleDelete={this.handleDelete}
+              handleView={this.handleView}
               showFormEdit={this.showFormEdit}
               singlePageView={this.singlePageView}
             />
@@ -88,6 +96,7 @@ class SinglePageContainer extends Component {
 function mapStateToProps(state) {
   return {
     loading: state.loading,
+    view: state.view,
     pages: state.SinglePage.pages,
   };
 }
@@ -105,7 +114,6 @@ function mapDispatchToProps(dispatch) {
 
 SinglePageContainer.propTypes = {
   pages: array,
-  history: object,
   loadData: func,
   addPage: func,
   deletePage: func,
@@ -114,7 +122,6 @@ SinglePageContainer.propTypes = {
 
 SinglePageContainer.defaultProps = {
   pages: [],
-  history: null,
   loadData: () => {},
   addPage: () => {},
   deletePage: () => {},

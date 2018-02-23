@@ -1,6 +1,7 @@
 const DEFAULT_STATE = {
   loading: false,
   pages: [],
+  view: false,
   error: '',
 };
 
@@ -27,17 +28,20 @@ const pages = (state = DEFAULT_STATE, action) => {
       return {
         ...state,
         loading: true,
+        view: false,
       };
     case 'ADD_PAGE_SUCCESS':
       return {
         ...state,
         loading: false,
+        view: false,
         pages: [...state.pages, action.page],
       };
     case 'ADD_PAGE_FAILURE':
       return {
         ...state,
         loading: false,
+        view: false,
         error: action.error,
       };
     case 'DELETE_PAGE_REQUEST':

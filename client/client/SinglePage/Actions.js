@@ -1,5 +1,4 @@
 // imports
-import uuid from 'uuid/v1';
 
 const API_URL = 'http://localhost:8081/api/v2/pages';
 
@@ -27,7 +26,6 @@ const addPage = page => (dispatch) => {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      id: uuid(),
       ...page,
     }),
   })
@@ -68,19 +66,19 @@ const getPage = () => {
   };
 };
 
-const deletePage = id => (dispatch) => {
+const deletePage = _id => (dispatch) => {
   dispatch({
     type: DELETE_PAGE_REQUEST,
-    id,
+    _id,
   });
-  fetch(`${API_URL}/${id}`, {
+  fetch(`${API_URL}/${_id}`, {
     method: 'DELETE',
   })
     .then(response => response.json())
     .then(() => {
       dispatch({
         type: DELETE_PAGE_SUCCESS,
-        id,
+        _id,
       });
     })
     .catch((error) => {
@@ -95,18 +93,19 @@ const updatePage = page => (dispatch) => {
   dispatch({
     type: UPDATE_PAGE_REQUEST,
   });
-  fetch(`${API_URL}/${page.id}`, {
+  fetch(`${API_URL}/${page._id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       ...page,
+      view: true,
     }),
   })
     .then(response => response.json())
     .then(() => {
       dispatch({
         type: UPDATE_PAGE_SUCCESS,
-        id: page.id,
+        _id: page._id,
       });
     })
     .catch((error) => {
@@ -121,7 +120,7 @@ const getDataPage = page => (dispatch) => {
   dispatch({
     type: GET_DATA_PAGE_REQUEST,
   });
-  fetch(`${API_URL}/${page.id}`, {
+  fetch(`${API_URL}/${page._id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -132,7 +131,7 @@ const getDataPage = page => (dispatch) => {
     .then(() => {
       dispatch({
         type: GET_DATA_PAGE_SUCCESS,
-        id: page.id,
+        _id: page._id,
       });
     })
     .catch((error) => {
