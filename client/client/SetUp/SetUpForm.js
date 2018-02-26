@@ -14,7 +14,7 @@ const SetUpForm = props => (
       </div>
       <div className="form-item">
         <label htmlFor="newUserPassword">
-          <Input className="input--space" type="text" name="newUserPassword" onChange={props.handleInputChange} id="newUserPassword" required="true" placeholder="Password" />
+          <Input className="input--space" type="password" name="newUserPassword" onChange={props.handleInputChange} id="newUserPassword" required="true" placeholder="Password" />
         </label>
 
       </div>
@@ -25,7 +25,7 @@ const SetUpForm = props => (
       </div>
 
       <div className="form-item">
-        <Link to="/Dashboard"><Button type="submit" className="btn-primary blue btn-empty" onClick={props.handleSubmit}>Go</Button></Link>
+        <Link to="/Dashboard"><Button className="btn-principal" basic color="red" onClick={props.handleSubmit}>Go</Button></Link>
       </div>
     </div>
   </div>

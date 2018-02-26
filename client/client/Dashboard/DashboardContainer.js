@@ -3,19 +3,14 @@ import { Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const DashboardContainer = () => (
-  <div>
+  <div className="dashboard">
     <div className="clearfix">
       <section className="section-wrap">
-        <div className="" style={{ textAlign: 'center', padding: '3rem' }}>
-          <h2>WELCOME</h2>
-          <p>The coolest and unusable CMS :)</p>
-          <a>Go to home</a>
-        </div>
-        <div className="dashboard-sidebar">
-          <Link to="/SinglePage"><Button className="ui basic olive button">Add New Page</Button></Link>
-          <Button className="ui basic olive button">Add New Content</Button>
-          <Button className="ui basic olive button">Add New Media</Button>
-        </div>
+        <nav className="dashboard__nav">
+          <Link to="/SinglePage" className="dashboard__a dashborad__icon--newpage">New Page</Link>
+          <Link to="/SinglePage" className="dashboard__a dashborad__icon--media">New Media</Link>
+          <Link to="/SinglePage" className="dashboard__a dashborad__icon--post">New Post</Link>
+        </nav>
       </section>
     </div>
   </div>
