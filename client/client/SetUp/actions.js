@@ -13,6 +13,11 @@ const GET_USERS_REQUEST = 'GET_USERS_REQUEST';
 const GET_USERS_SUCCESS = 'GET_USERS_SUCCESS';
 const GET_USERS_FAILURE = 'GET_USERS_FAILURE';
 
+/**
+ * Adds new user
+ * @func
+ */
+
 const addUser = user => (dispatch) => {
   dispatch({
     type: ADD_USER_REQUEST,
@@ -40,6 +45,10 @@ const addUser = user => (dispatch) => {
 };
 
 
+/**
+ * Gets all the users
+ * @func
+ */
 const getUsers = () => (dispatch) => {
   dispatch({
     type: GET_USERS_REQUEST,
@@ -60,7 +69,7 @@ const getUsers = () => (dispatch) => {
     });
 };
 
-
+/** Export Module */
 module.exports = {
   addUser,
   getUsers,

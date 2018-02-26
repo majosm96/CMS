@@ -1,4 +1,4 @@
-// Todo reducer
+/** Dafault State */
 
 const DEFAULT_STATE = {
   loading: false,

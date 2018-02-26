@@ -6,6 +6,12 @@ import SetUpContainer from './SetUp/SetUpContainer';
 import DashboardContainer from './Dashboard/DashboardContainer';
 import SinglePageContainer from './SinglePage/SinglePageContainer';
 
+/**
+ * Represents App
+ * @class
+ * @return Routes of the App
+ */
+
 export default class App extends React.Component {
   render() {
     return (

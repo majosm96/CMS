@@ -2,26 +2,34 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
 
+/**
+ * Represents a Welcome Container.
+ * @class
+ * @return Container with animation and Link to Set Up
+ */
+
 class WelcomeContainer extends Component {
   constructor(props) {
     super(props);
     this.animation = this.animation.bind(this);
   }
 
+  /** Animatied Lego */
   animation() {
-    var animData = {
+    const animData = {
       wrapper: document.querySelector('#animationWindow'),
       animType: 'svg',
       loop: true,
       prerender: true,
       autoplay: true,
-      path: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/LEGO_loader.json'
+      path: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/LEGO_loader.json',
     };
-    var anim = bodymovin.loadAnimation(animData);
+    const anim = bodymovin.loadAnimation(animData);
     anim.setSpeed(2.4);
   }
 
   render() {
+    this.animation();
     return (
       <div className="container-fluid">
         <div className="row welcome-container">
@@ -31,7 +39,7 @@ class WelcomeContainer extends Component {
             <Link to="/SetUp"><Button className="btn-principal" basic color="red">Start</Button></Link>
           </div>
           <div className="col-sm-12 col-md-6 section-wrap">
-            <Button onClick={this.animation}>Start Animi</Button>
+            <Button onClick={this.animation}>Animi</Button>
             <div id="animationWindow" />
           </div>
         </div>
@@ -40,4 +48,5 @@ class WelcomeContainer extends Component {
   }
 }
 
+/** Export Module */
 export default WelcomeContainer;

@@ -12,6 +12,7 @@ module.exports = {
   output: {
     path: path.resolve('dist'),
     filename: 'index_bundle.js',
+    publicPath: '/',
   },
   module: {
     loaders: [

@@ -3,6 +3,13 @@ import { func } from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Button, Input } from 'semantic-ui-react';
 
+/**
+ * Represents a Single Form.
+ * Gets the data from the form to the App State
+ * @func
+ * @return Form
+ */
+
 const SetUpForm = props => (
   <div className="form-container" id="form-container">
     <div className="form-basic">
@@ -31,6 +38,7 @@ const SetUpForm = props => (
   </div>
 );
 
+/** Props Validations */
 SetUpForm.propTypes = {
   handleSubmit: func,
   handleInputChange: func,
@@ -41,5 +49,5 @@ SetUpForm.defaultProps = {
   handleInputChange: () => {},
 };
 
-
+/** Export module */
 export default SetUpForm;

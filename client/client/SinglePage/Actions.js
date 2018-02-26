@@ -1,4 +1,4 @@
-// imports
+/** Imports */
 
 const API_URL = 'http://localhost:8081/api/v2/pages';
 
@@ -17,6 +17,11 @@ const UPDATE_PAGE_FAILURE = 'UPDATE_PAGE_FAILURE';
 const GET_DATA_PAGE_REQUEST = 'GET_DATA_PAGE_REQUEST';
 const GET_DATA_PAGE_SUCCESS = 'GET_DATA_PAGE_SUCCESS';
 const GET_DATA_PAGE_FAILURE = 'GET_DATA_PAGE_FAILURE';
+
+/**
+ * Adds new page to State with POST method
+ * @func
+ */
 
 const addPage = page => (dispatch) => {
   dispatch({
@@ -44,6 +49,10 @@ const addPage = page => (dispatch) => {
     });
 };
 
+/**
+ * Gets all the pages
+ * @func
+ */
 const getPage = () => {
   return function (dispatch) {
     dispatch({
@@ -66,6 +75,10 @@ const getPage = () => {
   };
 };
 
+/**
+ * Deletes page by their _id
+ * @func
+ */
 const deletePage = _id => (dispatch) => {
   dispatch({
     type: DELETE_PAGE_REQUEST,
@@ -89,6 +102,10 @@ const deletePage = _id => (dispatch) => {
     });
 };
 
+/**
+ * Updates each page by their _id
+ * @func
+ */
 const updatePage = page => (dispatch) => {
   dispatch({
     type: UPDATE_PAGE_REQUEST,
@@ -98,7 +115,6 @@ const updatePage = page => (dispatch) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       ...page,
-      view: true,
     }),
   })
     .then(response => response.json())
@@ -116,6 +132,10 @@ const updatePage = page => (dispatch) => {
     });
 };
 
+/**
+ * Gets each data page in order to modified
+ * @func
+ */
 const getDataPage = page => (dispatch) => {
   dispatch({
     type: GET_DATA_PAGE_REQUEST,
@@ -142,6 +162,7 @@ const getDataPage = page => (dispatch) => {
     });
 };
 
+/** Export Module */
 module.exports = {
   addPage,
   getPage,

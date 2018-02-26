@@ -1,7 +1,12 @@
 const mongoose = require('mongoose')
 
+/** Import the Module */
 const Page = require('../models/Page')
 
+/**
+ * Gets all the pages
+ * @func
+ */
 function getPage(req, res) {
   Page.find()
     .exec((err, pages) => {
@@ -13,6 +18,12 @@ function getPage(req, res) {
       res.json(pages)
     })
 }
+
+/**
+ * Adds new page with the body response
+ * @func
+ * @return {error} 
+ */
 
 function addPage(request, response) {
   console.log(request.body)
@@ -32,9 +43,22 @@ function addPage(request, response) {
   });
 }
 
+function deletePage(req, res){
+  Page.remove({
+      _id: req.params.page_id
+    }, function (err, page) {
+      if (err) {
+        res.send(err)
+      }
+      res.json({ message: 'Successfully deleted' });
+    }
+  )
+ }
 
+/** Module Export */
 module.exports = {
   getPage,
   addPage,
+  deletePage,
 }
 

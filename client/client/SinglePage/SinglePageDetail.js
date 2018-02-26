@@ -1,6 +1,13 @@
 import React from 'react';
 import { object } from 'prop-types';
 
+/**
+ * Represents a Single Page Detail.
+ * @func
+ * @param {object} - With a property page data.
+ * @return A section with the info.
+ */
+
 const SinglePageDetail = (props) => {
   return (
     <div>
@@ -11,6 +18,7 @@ const SinglePageDetail = (props) => {
   );
 };
 
+/** Props validation */
 SinglePageDetail.propTypes = {
   page: object,
 };
@@ -19,4 +27,5 @@ SinglePageDetail.defaultProps = {
   page: object,
 };
 
+/** Module export */
 export default SinglePageDetail;

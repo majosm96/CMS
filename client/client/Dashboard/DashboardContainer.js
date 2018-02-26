@@ -2,6 +2,13 @@ import React from 'react';
 import { Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
+
+/**
+ * Represents the Dashboard.
+ * @func
+ * @return Dashboard with Links
+ */
+
 const DashboardContainer = () => (
   <div className="dashboard">
     <div className="clearfix">
@@ -16,5 +23,5 @@ const DashboardContainer = () => (
   </div>
 );
 
-
+/* Module Export */
 export default DashboardContainer;

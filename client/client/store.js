@@ -3,27 +3,28 @@ import ReduxThunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import { createLogger } from 'redux-logger';
 
-// Import Modules
+/** Import Modules */
 import SetUpReducer from './SetUp/SetUpReducer';
 import SinglePageReducer from './SinglePage/SinglePageReducer';
 
-// Create logger
+/** Create logger */
 const logger = createLogger({
   collapsed: true,
   duration: true,
   diff: true,
 });
 
-// Reducer
+/** Reducer */
 const reducer = combineReducers({
   SetUp: SetUpReducer,
   SinglePage: SinglePageReducer,
 });
 
-// Create store
+/** Create store */
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(
   ReduxThunk,
   logger,
 )));
 
+/** Export Store */
 export default store;

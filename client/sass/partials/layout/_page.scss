@@ -29,6 +29,13 @@
     }
 }
 
+.section {
+    @include query(768px) {
+        width: 80%;
+        float: left;
+    }
+}
+
 .wrapper {
     background-color: #fff;
     position: relative;
