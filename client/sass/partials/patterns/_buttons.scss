@@ -1,29 +1,33 @@
 .btn {
-    border: none;
-    cursor: pointer;
-    display: inline-block;
-    padding: 0.5rem 2rem;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5rem 2rem;
 
-    a {
-        border: none;
-    }
+  a {
+      border: none;
+  }
 
-    p {
-      margin: 0;
-    }
+  p {
+    margin: 0;
+  }
 }
 
 .btn-principal {
-    font-weight: 300;
-    display: inline-block;
-    margin-top: 25px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all .15s ease 0s;
+  font-weight: 300;
+  display: inline-block;
+  margin-top: 25px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .15s ease 0s;
 
-    &:hover {
-      color: rgb(255, 255, 255);
-      background-color: rgb(238, 48, 48);
-    }
+  &:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(238, 48, 48);
+  }
 }
 
+.btn-submit {
+  text-align: center;
+  padding: $space-base;
+}

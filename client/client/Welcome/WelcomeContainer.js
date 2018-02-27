@@ -33,14 +33,15 @@ class WelcomeContainer extends Component {
     return (
       <div className="container-fluid">
         <div className="row welcome-container">
-          <div className="col-sm-12 col-md-6 section-wrap">
+          <div className="col-sm-12 col-md-6 section-wrap welcome-wrap">
             <h1>Welcome</h1>
             <p className="welcome-p">Some are just easier to install, use and extend, thanks to some thoughtful planning by the lead developers</p>
-            <Link to="/SetUp"><Button className="btn-principal" basic color="red">Start</Button></Link>
+            <Link to="/SetUp"><Button className="btn-principal" inverted>Start</Button></Link>
           </div>
           <div className="col-sm-12 col-md-6 section-wrap">
             <Button onClick={this.animation}>Animi</Button>
             <div id="animationWindow" />
+            <p>You can build your own web site, just like legos :)</p>
           </div>
         </div>
       </div>

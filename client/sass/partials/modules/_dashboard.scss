@@ -5,7 +5,7 @@
   float: left;
   border-top: 1px solid #b2b2b2;
   border-bottom: 1px solid #b2b2b2;
-  //background-color: #414141;
+  background-color: #f8f6f6;
   
   @include query(768px) {
     border: none;

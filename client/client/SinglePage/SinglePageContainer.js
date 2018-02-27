@@ -73,7 +73,7 @@ class SinglePageContainer extends Component {
   handleDelete(e) {
     e.preventDefault();
     this.props.deletePage(e.target.parentNode.parentNode.getAttribute('id'));
-    console.log(e.target.parentNode.parentNode.getAttribute('id'))
+    console.log(e.target.parentNode.parentNode.getAttribute('id'));
   }
 
   /** Change view property in state in order to show Page Detail */
@@ -94,6 +94,7 @@ class SinglePageContainer extends Component {
       <div className="container-fluid">
         <Dashboard />
         <div className="section-wrap section">
+          <h2>Pages</h2>
           <SinglePageForm
             handleSubmit={this.handleSubmit}
             handleInputChange={this.handleInputChange}
