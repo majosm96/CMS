@@ -31,6 +31,7 @@ class SinglePageContainer extends Component {
     this.render = this.render.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleInputCKEditorChange = this.handleInputCKEditorChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleView = this.handleView.bind(this);
@@ -49,6 +50,16 @@ class SinglePageContainer extends Component {
 
     this.setState({
       [name]: value,
+    });
+  }
+
+  /** Handle Input change for CKEditor */
+  handleInputCKEditorChange(evt) {
+    console.log('onChange fired with event info: ', evt);
+    const newContent = evt.editor.getData();
+    console.log(newContent);
+    this.setState({
+      newPageText: newContent,
     });
   }
 
@@ -96,8 +107,10 @@ class SinglePageContainer extends Component {
         <div className="section-wrap section">
           <h2>Pages</h2>
           <SinglePageForm
+            item={this.state}
             handleSubmit={this.handleSubmit}
             handleInputChange={this.handleInputChange}
+            handleInputCKEditorChange={this.handleInputCKEditorChange}
           />
           <div>
             {view ? (
@@ -161,6 +174,7 @@ SinglePageContainer.propTypes = {
   updatePage: func,
 };
 
+/** Props Validations */
 SinglePageContainer.defaultProps = {
   pages: [],
   loadData: () => {},

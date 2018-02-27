@@ -14,13 +14,13 @@ const SinglePageRow = (props) => {
       <td>{props.page.name}</td>
       <td>{props.page.url}</td>
       <td>
-        <Button color="teal" size="tiny" onClick={e => props.handleView()}>View</Button>
+        <Button inverted color="yellow" size="tiny" onClick={e => props.handleView()}>View</Button>
       </td>
       <td>
-        <Button color="teal" size="tiny" >Edit</Button>
+        <Button inverted color="blue" size="tiny" >Edit</Button>
       </td>
       <td>
-        <Button color="teal" size="tiny" onClick={props.handleDelete} >Delete</Button>
+        <Button inverted color="red" size="tiny" onClick={props.handleDelete} >Delete</Button>
       </td>
     </tr>
   );
