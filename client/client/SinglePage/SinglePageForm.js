@@ -1,5 +1,6 @@
 import React from 'react';
 import { func, object } from 'prop-types';
+import CKEditor from "react-ckeditor-component";
 import { Form, Button, Input } from 'semantic-ui-react';
 
 /**
@@ -30,6 +31,13 @@ const SinglePageForm = props => (
           <Input className="input--space" type="text" name="newPageText" onChange={props.handleInputChange} id="newPageText" required="true" placeholder="Teaser Text Page" />
         </label>
       </div>
+      <CKEditor 
+        activeClass="p10" 
+        // content={this.state.content} 
+        events={{
+          change: props.handleInputChange,
+        }}
+      />
 
       <div className="btn-submit">
         <Button basic color="red" size="tiny" type="submit" onClick={props.handleSubmit}>Create page</Button>
