@@ -1,83 +1,82 @@
 /** Dafault State */
 const DEFAULT_STATE = {
   loading: false,
-  pages: [],
+  posts: [],
   error: '',
 };
 
-const pages = (state = DEFAULT_STATE, action) => {
+const posts = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
-    case 'GET_PAGES_REQUEST':
+    case 'GET_POSTS_REQUEST':
       return {
         ...state,
         loading: true,
       };
-    case 'GET_PAGES_SUCCESS':
+    case 'GET_POSTS_SUCCESS':
       return {
         ...state,
         loading: false,
-        pages: action.pages,
+        posts: action.posts,
       };
-    case 'GET_PAGES_FAILURE':
+    case 'GET_POSTS_FAILURE':
       return {
         ...state,
         loading: false,
         error: action.error,
       };
-    case 'ADD_PAGE_REQUEST':
+    case 'ADD_POST_REQUEST':
       return {
         ...state,
         loading: true,
       };
-    case 'ADD_PAGE_SUCCESS':
+    case 'ADD_POST_SUCCESS':
       return {
         ...state,
         loading: false,
-        pages: [...state.pages, action.page],
+        posts: [...state.posts, action.post],
       };
-    case 'ADD_PAGE_FAILURE':
+    case 'ADD_POST_FAILURE':
       return {
         ...state,
         loading: false,
         error: action.error,
       };
-    case 'DELETE_PAGE_REQUEST':
+    case 'DELETE_POST_REQUEST':
       return {
         ...state,
         loading: true,
       };
-    case 'DELETE_PAGE_SUCCESS':
+    case 'DELETE_POST_SUCCESS':
       return {
         ...state,
         loading: false,
-        pages: state.pages.filter((item) => {
+        posts: state.posts.filter((item) => {
           return item._id !== action._id;
         }),
       };
-    case 'DELETE_PAGE_FAILURE':
+    case 'DELETE_POST_FAILURE':
       return {
         ...state,
         error: action.error,
       };
-    case 'UPDATE_PAGE_REQUEST':
+    case 'UPDATE_POST_REQUEST':
       return {
         ...state,
         loading: true,
       };
-    case 'UPDATE_PAGE_SUCCESS':
+    case 'UPDATE_POST_SUCCESS':
       return {
         ...state,
         loading: false,
-        pages: state.pages.map((item) => {
+        posts: state.posts.map((item) => {
           if (item._id === action._id) {
-            item.name = action.name;
-            item.url = action.url;
+            item.title = action.title;
             item.content = action.content;
           }
           return item;
         }),
       };
-    case 'UPDATE_PAGE_FAILURE':
+    case 'UPDATE_POST_FAILURE':
       return {
         ...state,
         error: action.error,
@@ -88,4 +87,4 @@ const pages = (state = DEFAULT_STATE, action) => {
 };
 
 /** Export Module */
-export default pages;
+export default posts;

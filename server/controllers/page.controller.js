@@ -30,7 +30,7 @@ function addPage(request, response) {
   let page = new Page();
   page.name = request.body.name;
   page.url = request.body.url;
-  page.text = request.body.text;
+  page.content = request.body.content;
 
   //Saves the new page and checks for errors
   page.save(function (error) {
@@ -53,12 +53,33 @@ function deletePage(req, res){
       res.json({ message: 'Successfully deleted' });
     }
   )
- }
+}
+
+function updatePage(req, res) {
+    // use our bear model to find the bear we want
+    Page.findById(req.params.page_id, function(err, page) {
+        if (err)
+          res.send(err);
+
+        page.name = req.body.name;  // update the bears info
+        page.url = req.body.url;
+        page.content = req.body.content;
+
+        // save the bear
+        page.save(function(err) {
+            if (err)
+                res.send(err);
+
+            res.json({ message: 'Page updated!' });
+        });
+    });
+}
 
 /** Module Export */
 module.exports = {
   getPage,
   addPage,
   deletePage,
+  updatePage,
 }
 

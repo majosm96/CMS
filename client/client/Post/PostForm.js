@@ -10,30 +10,24 @@ import { Button, Input } from 'semantic-ui-react';
  * @return Form
  */
 
-const SinglePageForm = (props) => {
+const PostForm = (props) => {
   return (
     <div className="form-container" id="form-container">
-      <h4>New Page</h4>
+      <h4>New Post</h4>
       <div className="form-basic">
         <div className="form-item">
-          <label htmlFor="newPageName">
-            <Input className="input--space" type="text" name="newPageName" onChange={props.handleInputChange} id="newPageName" required="true" placeholder="Title" />
-          </label>
-        </div>
-
-        <div className="form-item">
-          <label htmlFor="newPageUrl">
-            <Input className="input--space" type="text" name="newPageUrl" onChange={props.handleInputChange} id="newPageUrl" required="true" placeholder="URL" />
+          <label htmlFor="newPostTitle">
+            <Input className="input--space" type="text" name="newPostTitle" onChange={props.handleInputChange} id="newPostTitle" required="true" placeholder="Title" />
           </label>
         </div>
 
         <CKEditor
-          content={props.item.newPageContent}
+          content={props.item.newPostContent}
           events={{ change: props.handleInputCKEditorChange }}
         />
 
         <div className="btn-submit">
-          <Button basic color="red" size="tiny" type="submit" onClick={props.handleSubmit}>Create page</Button>
+          <Button basic color="red" size="tiny" type="submit" onClick={props.handleSubmit}>Create post</Button>
         </div>
       </div>
     </div>
@@ -41,14 +35,14 @@ const SinglePageForm = (props) => {
 };
 
 /** Props Validations */
-SinglePageForm.propTypes = {
+PostForm.propTypes = {
   item: object,
   handleSubmit: func,
   handleInputChange: func,
   handleInputCKEditorChange: func,
 };
 
-SinglePageForm.defaultProps = {
+PostForm.defaultProps = {
   item: {},
   handleSubmit: () => {},
   handleInputChange: () => {},
@@ -56,4 +50,4 @@ SinglePageForm.defaultProps = {
 };
 
 /** Export module */
-export default SinglePageForm;
+export default PostForm;

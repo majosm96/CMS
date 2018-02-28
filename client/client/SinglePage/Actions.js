@@ -122,6 +122,9 @@ const updatePage = page => (dispatch) => {
       dispatch({
         type: UPDATE_PAGE_SUCCESS,
         _id: page._id,
+        name: page.name,
+        url: page.url,
+        content: page.content,
       });
     })
     .catch((error) => {

@@ -8,13 +8,12 @@ import Button from 'semantic-ui-react/dist/commonjs/elements/Button/Button';
  * @param {object} - Each page element
  * @return Row
  */
-const SinglePageRow = (props) => {
+const PostRow = (props) => {
   return (
-    <tr className="table-row" id={props.page._id}>
-      <td>{props.page.name}</td>
-      <td>{props.page.url}</td>
+    <tr className="table-row" id={props.post._id}>
+      <td>{props.post.title}</td>
       <td>
-        <Button inverted color="blue" size="tiny" className="btn-yellow" onClick={() => props.handleEdit(props.page)} >Edit</Button>
+        <Button inverted color="blue" size="tiny" className="btn-yellow" onClick={() => props.handleEdit(props.post)} >Edit</Button>
       </td>
       <td>
         <Button inverted color="red" size="tiny" className="btn-yellow" onClick={props.handleDelete} >Delete</Button>
@@ -25,21 +24,17 @@ const SinglePageRow = (props) => {
 
 
 /** Props Validations */
-SinglePageRow.propTypes = {
-  singlePageView: func,
+PostRow.propTypes = {
   handleDelete: func,
-  handleView: func,
   handleEdit: func,
-  page: object,
+  post: object,
 };
 
-SinglePageRow.defaultProps = {
-  singlePageView: () => {},
+PostRow.defaultProps = {
   handleDelete: () => {},
-  handleView: () => {},
   handleEdit: () => {},
-  page: object,
+  post: object,
 };
 
 /** Export the module */
-export default SinglePageRow;
+export default PostRow;

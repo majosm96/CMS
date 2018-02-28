@@ -1,32 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { func, array, object } from 'prop-types';
+import { func, array } from 'prop-types';
 
 import Dashboard from '../Dashboard/DashboardContainer';
-import SinglePageForm from './SinglePageForm';
-import SinglePageFormEdit from './SinglePageFormEdit';
-import SinglePageTable from './SinglePageTable';
+import PostForm from './PostForm';
+import PostFormEdit from './PostFormEdit';
+import PostTable from './PostTable';
 
-import { getPage, addPage, deletePage, updatePage } from './Actions';
+import { getPosts, addPost, deletePost, updatePost } from './Actions';
 
 /**
- * Represents a SinglePage.
- * Creates pages, edit, update, delete
+ * Represents a Post.
+ * Creates posts, edit, update, delete
  * @class
- * @return Singlepage
+ * @return Post
  */
 
-class SinglePageContainer extends Component {
+class PostContainer extends Component {
   /** Constructor manage state of the app */
   constructor(props) {
     super(props);
     this.state = {
-      newPageName: '',
-      newPageUrl: '',
-      newPageContent: '',
+      newPostTitle: '',
+      newPostContent: '',
       _id: '',
       isEditing: false,
-      view: false,
     };
 
     /** Call of methods  */
@@ -37,7 +35,6 @@ class SinglePageContainer extends Component {
     this.handleInputCKEditorChange = this.handleInputCKEditorChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
-    this.handleView = this.handleView.bind(this);
     /** Toggle Edit */
     this.toggleEdit = this.toggleEdit.bind(this);
     /** Save date */
@@ -63,52 +60,43 @@ class SinglePageContainer extends Component {
   /** Handle Input change for CKEditor */
   handleInputCKEditorChange(evt) {
     console.log('onChange fired with event info: ', evt);
-    const newContent = evt.editor.getData();
-    console.log(newContent);
+    const newContentCKeditor = evt.editor.getData();
+    console.log(newContentCKeditor);
     this.setState({
-      newPageContent: newContent,
+      newPostContent: newContentCKeditor,
     });
   }
 
   /** Handle data and sets to state in order to send data to server  */
   handleSubmit() {
-    const page = {};
-    page.name = this.state.newPageName;
-    page.url = this.state.newPageUrl;
-    page.content = this.state.newPageContent;
+    const post = {};
+    post.title = this.state.newPostTitle;
+    post.content = this.state.newPostContent;
 
-    this.props.addPage(page);
+    console.log('post', post);
+    this.props.addPost(post);
 
     this.setState({
-      newPageName: '',
-      newPageUrl: '',
-      newPageContent: '',
+      newPostTitle: '',
+      newPostContent: '',
       isEditing: false,
-      view: false,
     });
   }
 
   /** Get the _id so that send to server */
   handleDelete(e) {
     e.preventDefault();
-    this.props.deletePage(e.target.parentNode.parentNode.getAttribute('id'));
+    this.props.deletePost(e.target.parentNode.parentNode.getAttribute('id'));
     console.log(e.target.parentNode.parentNode.getAttribute('id'));
   }
 
-  /** Change view property in state in order to show Page Detail */
-  handleView() {
-    this.state.view = true;
-    console.log(this.state.view);
-  }
-
   /** Change State of isEditing */
-  toggleEdit(page) {
-    console.log(page);
+  toggleEdit(post) {
+    console.log(post);
     this.setState({
-      newPageName: page.name,
-      newPageUrl: page.url,
-      newPageContent: page.content,
-      _id: page._id,
+      newPostTitle: post.title,
+      newPostContent: post.content,
+      _id: post._id,
       isEditing: !this.state.isEditing,
     });
   }
@@ -117,22 +105,20 @@ class SinglePageContainer extends Component {
   onSave(event) {
     console.log('event', event);
     const field = event.target.name;
-    const page = {};
+    const post = {};
 
-    page.name = this.state.newPageName;
-    page.url = this.state.newPageUrl;
-    page.content = this.state.newPageContent;
-    page._id = this.state._id;
+    post.title = this.state.newPostTitle;
+    post.content = this.state.newPostContent;
+    post._id = this.state._id;
 
-    page[field] = event.target.value;
+    post[field] = event.target.value;
 
-    console.log('page', page);
-    this.props.updatePage(page);
+    console.log('post', post);
+    this.props.updatePost(post);
 
     return this.setState({
-      newPageName: '',
-      newPageUrl: '',
-      newPageContent: '',
+      newPostTitle: '',
+      newPostContent: '',
       _id: '',
       isEditing: false,
     });
@@ -143,7 +129,7 @@ class SinglePageContainer extends Component {
     if (this.state.isEditing) {
       return (
         <div>
-          <SinglePageFormEdit
+          <PostFormEdit
             item={this.state}
             onSave={this.onSave}
             handleInputChange={this.handleInputChange}
@@ -156,15 +142,15 @@ class SinglePageContainer extends Component {
       <div className="container-fluid">
         <Dashboard />
         <div className="section-wrap section">
-          <h2>Pages</h2>
-          <SinglePageForm
+          <h2 style={{ textAlign: 'center' }}>Posts</h2>
+          <PostForm
             item={this.state}
             handleSubmit={this.handleSubmit}
             handleInputChange={this.handleInputChange}
             handleInputCKEditorChange={this.handleInputCKEditorChange}
           />
-          <SinglePageTable
-            pages={this.props.pages}
+          <PostTable
+            posts={this.props.posts}
             handleEdit={this.toggleEdit}
             handleDelete={this.handleDelete}
             handleView={this.handleView}
@@ -187,7 +173,7 @@ function mapStateToProps(state) {
   return {
     loading: state.loading,
     view: state.view,
-    pages: state.SinglePage.pages,
+    posts: state.Post.posts,
   };
 }
 
@@ -200,33 +186,33 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    addPage: page => dispatch(addPage(page)),
+    addPost: post => dispatch(addPost(post)),
     loadData: () => {
-      dispatch(getPage());
+      dispatch(getPosts());
     },
-    deletePage: _id => dispatch(deletePage(_id)),
-    updatePage: page => dispatch(updatePage(page)),
+    deletePost: _id => dispatch(deletePost(_id)),
+    updatePost: post => dispatch(updatePost(post)),
   };
 }
 
 /** Props Validations */
-SinglePageContainer.propTypes = {
-  pages: array,
+PostContainer.propTypes = {
+  posts: array,
   loadData: func,
-  addPage: func,
-  deletePage: func,
-  updatePage: func,
+  addPost: func,
+  deletePost: func,
+  updatePost: func,
 };
 
 /** Props Validations */
-SinglePageContainer.defaultProps = {
-  pages: [],
+PostContainer.defaultProps = {
+  posts: [],
   loadData: () => {},
-  addPage: () => {},
-  deletePage: () => {},
-  updatePage: () => {},
+  addPost: () => {},
+  deletePost: () => {},
+  updatePost: () => {},
 };
 
 
 /** Module Export */
-export default connect(mapStateToProps, mapDispatchToProps)(SinglePageContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(PostContainer);

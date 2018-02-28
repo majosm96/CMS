@@ -6,6 +6,7 @@ import { createLogger } from 'redux-logger';
 /** Import Modules */
 import SetUpReducer from './SetUp/SetUpReducer';
 import SinglePageReducer from './SinglePage/SinglePageReducer';
+import PostReducer from './Post/PostReducer';
 
 /** Create logger */
 const logger = createLogger({
@@ -18,6 +19,7 @@ const logger = createLogger({
 const reducer = combineReducers({
   SetUp: SetUpReducer,
   SinglePage: SinglePageReducer,
+  Post: PostReducer,
 });
 
 /** Create store */
