@@ -13,26 +13,26 @@ import { Button, Input } from 'semantic-ui-react';
 const SetUpForm = props => (
   <div className="form-container" id="form-container">
     <div className="form-basic">
-      <div className="form-item">
+      <div className="">
         <label htmlFor="newUserName">
           <Input className="input--space" type="text" name="newUserName" onChange={props.handleInputChange} id="newUserName" required="true" placeholder="User name" />
         </label>
 
       </div>
-      <div className="form-item">
+      <div className="">
         <label htmlFor="newUserPassword">
           <Input className="input--space" type="password" name="newUserPassword" onChange={props.handleInputChange} id="newUserPassword" required="true" placeholder="Password" />
         </label>
 
       </div>
-      <div className="form-item">
+      <div className="">
         <label htmlFor="newDataBase">
           <Input className="input--space" type="text" name="newDataBase" onChange={props.handleInputChange} id="newDataBase" required="true" placeholder="Data Base" />
         </label>
       </div>
 
-      <div className="form-item">
-        <Link to="/Dashboard"><Button className="btn-principal" basic color="red" onClick={props.handleSubmit}>Go</Button></Link>
+      <div className="">
+        <Link to="/LogIn"><Button className="btn-principal" basic color="red" onClick={props.handleSubmit}>Go</Button></Link>
       </div>
     </div>
   </div>

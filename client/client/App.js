@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import WelcomeContainer from './Welcome/WelcomeContainer';
 import SetUpContainer from './SetUp/SetUpContainer';
+import LogInContainer from './LogIn/LogInContainer';
 import DashboardContainer from './Dashboard/DashboardContainer';
 import SinglePageContainer from './SinglePage/SinglePageContainer';
 import PostContainer from './Post/PostContainer';
@@ -20,6 +21,7 @@ export default class App extends React.Component {
         <Switch>
           <Route exact path="/" component={WelcomeContainer} />
           <Route exact path="/SetUp" component={SetUpContainer} />
+          <Route exact path="/LogIn" component={LogInContainer} />
           <Route exact path="/Dashboard" component={DashboardContainer} />
           <Route exact path="/SinglePage" component={SinglePageContainer} />
           <Route exact path="/Posts" component={PostContainer} />
