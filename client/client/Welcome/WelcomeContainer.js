@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from 'semantic-ui-react';
 
 /**
  * Represents a Welcome Container.
@@ -25,7 +24,7 @@ class WelcomeContainer extends Component {
       path: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/LEGO_loader.json',
     };
     const anim = bodymovin.loadAnimation(animData);
-    anim.setSpeed(2.4);
+    anim.setSpeed(2);
   }
 
   render() {
@@ -42,8 +41,7 @@ class WelcomeContainer extends Component {
               <li>3. Database name</li>
             </ul>
           </div>
-          <div className="col-sm-12 col-md-6 section-wrap">
-            <Button onClick={this.animation}>Animi</Button>
+          <div className="col-sm-12 col-md-6 section-wrap" onClick={this.animation.bind(this)} >
             <div id="animationWindow" />
             <p>You can build your own web site, just like legos :)</p>
             <Link to="/SetUp" className="btn btn-principal">Let's go</Link>
@@ -53,6 +51,5 @@ class WelcomeContainer extends Component {
     );
   }
 }
-
 /** Export Module */
 export default WelcomeContainer;

@@ -17,7 +17,6 @@ const DashboardContainer = () => (
         <nav className="dashboard__nav">
           <Link to="/Site" className="dashboard__a dashborad__icon--preview">Preview</Link>
           <Link to="/SinglePage" className="dashboard__a dashborad__icon--newpage">Pages</Link>
-          {/* <Link to="/SinglePage" className="dashboard__a dashborad__icon--media">New Media</Link> */}
         </nav>
       </section>
     </div>

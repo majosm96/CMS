@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "antd": "^3.1.6",
+    "bodymovin": "^4.13.0",
     "concurrently": "^3.5.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-react-parser": "^0.4.2",
@@ -18,6 +19,7 @@
     "path": "^0.12.7",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
+    "react-bodymovin": "^1.1.1",
     "react-ckeditor-component": "^1.0.7",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
