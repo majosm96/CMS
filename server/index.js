@@ -11,6 +11,7 @@ const DB_QUERY_STRING = process.env.DB
 const setupRoutes = require('./routes/setups')
 const pagesRoutes = require('./routes/pages')
 const postsRoutes = require('./routes/posts')
+const authsRoutes = require('./routes/auths')
 const app = express()
 
 /*  This allows to skip the "Same origin policy" to access resources from remote hosts */
@@ -32,6 +33,7 @@ app.get('/', (req, res) => {
 app.use('/api/v2/setups', setupRoutes)
 app.use('/api/v2/pages', pagesRoutes)
 app.use('/api/v2/posts', postsRoutes)
+app.use('/api/v2/auths', authsRoutes)
 
 /* Listen app at port */
 app.listen(app.get('port'), err => {

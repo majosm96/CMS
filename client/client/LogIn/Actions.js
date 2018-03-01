@@ -9,9 +9,6 @@ const API_URL = 'http://localhost:8081/api/v2/auths';
 const AUTH_USER_REQUEST = 'AUTH_USER_REQUEST';
 const AUTH_USER_SUCCESS = 'AUTH_USER_SUCCESS';
 const AUTH_USER_FAILURE = 'AUTH_USER_FAILURE';
-const GET_USERS_REQUEST = 'GET_USERS_REQUEST';
-const GET_USERS_SUCCESS = 'GET_USERS_SUCCESS';
-const GET_USERS_FAILURE = 'GET_USERS_FAILURE';
 
 /**
  * Adds new user
@@ -34,6 +31,7 @@ const authUser = user => (dispatch) => {
       dispatch({
         type: AUTH_USER_SUCCESS,
         user: data,
+        success: data.success,
       });
     })
     .catch((error) => {
@@ -45,32 +43,7 @@ const authUser = user => (dispatch) => {
 };
 
 
-/**
- * Gets all the users
- * @func
- */
-const getUsers = () => (dispatch) => {
-  dispatch({
-    type: GET_USERS_REQUEST,
-  });
-  fetch(API_URL)
-    .then(response => response.json())
-    .then((data) => {
-      dispatch({
-        type: GET_USERS_SUCCESS,
-        users: data,
-      });
-    })
-    .catch((error) => {
-      dispatch({
-        type: GET_USERS_FAILURE,
-        error,
-      });
-    });
-};
-
 /** Export Module */
 module.exports = {
   authUser,
-  getUsers,
 };

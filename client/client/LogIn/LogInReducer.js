@@ -1,6 +1,5 @@
 const DEFAULT_STATE = {
-  loading: false,
-  logIn: false,
+  userToken: '',
   error: '',
 };
 
@@ -14,7 +13,7 @@ const auth = (state = DEFAULT_STATE, action) => {
     case 'AUTH_USER_SUCCESS':
       return {
         ...state,
-        logIn: true,
+        logIn: action.success,
       };
     case 'AUTH_USER_FAILURE':
       return {

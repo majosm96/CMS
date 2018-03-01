@@ -46,10 +46,11 @@ class LogInContainer extends Component {
   /* Handle data and sets to state in order to send data to server  */
   handleSubmit() {
     const user = {};
-    user.name = this.state.newUserName;
-    user.password = this.state.newUserPassword;
+    user.name = this.state.UserName;
+    user.password = this.state.UserPassword;
     this.props.authUser(user);
 
+    console.log(this.state.logIn);
     this.setState = ({
       UserName: '',
       UserPassword: '',
