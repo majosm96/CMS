@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { object, func } from 'prop-types';
 import Button from 'semantic-ui-react/dist/commonjs/elements/Button/Button';
 
@@ -14,10 +15,13 @@ const SinglePageRow = (props) => {
       <td>{props.page.name}</td>
       <td>{props.page.url}</td>
       <td>
-        <Button inverted color="blue" size="tiny" className="btn-yellow" onClick={() => props.handleEdit(props.page)} >Edit</Button>
+        <Button inverted color="blue" size="mini" className="btn-yellow" onClick={() => props.handleEdit(props.page)} >Edit</Button>
       </td>
       <td>
-        <Button inverted color="red" size="tiny" className="btn-yellow" onClick={props.handleDelete} >Delete</Button>
+        <Button inverted color="red" size="mini" className="btn-yellow" onClick={props.handleDelete} >Delete</Button>
+      </td>
+      <td>
+        <Link to={`/Site/${props.page.url}`}><Button inverted color="yellow" size="mini" className="btn-yellow">View</Button></Link>
       </td>
     </tr>
   );

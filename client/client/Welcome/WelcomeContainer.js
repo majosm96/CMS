@@ -34,14 +34,19 @@ class WelcomeContainer extends Component {
       <div className="container-fluid">
         <div className="row welcome-container">
           <div className="col-sm-12 col-md-6 section-wrap welcome-wrap">
-            <h1>Welcome</h1>
-            <p className="welcome-p">Some are just easier to install, use and extend, thanks to some thoughtful planning by the lead developers</p>
-            <Link to="/SetUp"><Button className="btn-principal" inverted>Start</Button></Link>
+            <h1 className="welcome-wrap__heading">Welcome</h1>
+            <p className="welcome-p">Welcome to CMS. Before getting started, we need some information on the database. You will need to know the following items before proceeding.</p>
+            <ul className="welcome-wrap__list">
+              <li>1. User name</li>
+              <li>2. User password</li>
+              <li>3. Database name</li>
+            </ul>
           </div>
           <div className="col-sm-12 col-md-6 section-wrap">
             <Button onClick={this.animation}>Animi</Button>
             <div id="animationWindow" />
             <p>You can build your own web site, just like legos :)</p>
+            <Link to="/SetUp" className="btn btn-principal">Let's go</Link>
           </div>
         </div>
       </div>

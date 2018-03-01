@@ -79,3 +79,15 @@
         transition: width .4s;
     }
 }
+
+.nav-item {
+    padding: 10px;
+}
+
+.nav-item:hover {
+    color: $main-color;
+}
+
+.main-nav {
+ margin-bottom: 2rem;
+}

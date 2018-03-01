@@ -5,6 +5,11 @@ select, {
 
 }
 
+input::placeholder  {
+  padding: 10px;
+  text-align: center;
+}
+
 .input--space {
   margin: 0.5rem;
 }

@@ -10,13 +10,14 @@ import { Link } from 'react-router-dom';
  */
 
 const DashboardContainer = () => (
-  <div className="dashboard">
+  <div className="dashboard l-group ">
     <div className="clearfix">
       <section className="section-wrap">
+        <h2 className="sidebar__title sidebar__title--logo sidebar__title--logo-dash">CMS</h2>
         <nav className="dashboard__nav">
-          <Link to="/SinglePage" className="dashboard__a dashborad__icon--newpage">New Page</Link>
-          <Link to="/Posts" className="dashboard__a dashborad__icon--post">New Post</Link>
-          <Link to="/SinglePage" className="dashboard__a dashborad__icon--media">New Media</Link>
+          <Link to="/Site" className="dashboard__a dashborad__icon--preview">Preview</Link>
+          <Link to="/SinglePage" className="dashboard__a dashborad__icon--newpage">Pages</Link>
+          {/* <Link to="/SinglePage" className="dashboard__a dashborad__icon--media">New Media</Link> */}
         </nav>
       </section>
     </div>

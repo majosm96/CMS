@@ -153,10 +153,10 @@ class SinglePageContainer extends Component {
       );
     }
     return (
-      <div className="container-fluid">
+      <div className="l-group">
         <Dashboard />
-        <div className="section-wrap section">
-          <h2>Pages</h2>
+        <div className="section-wrap clearfix section l-group ">
+          <h3>Pages</h3>
           <SinglePageForm
             item={this.state}
             handleSubmit={this.handleSubmit}

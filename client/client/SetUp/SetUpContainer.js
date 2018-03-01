@@ -20,7 +20,7 @@ class SetUpContainer extends Component {
       newUserPassword: '',
       newDataBase: '',
     };
-    
+
     /* Call of methods  */
     this.render = this.render.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
@@ -62,8 +62,8 @@ class SetUpContainer extends Component {
   render() {
     return (
       <div className="section-wrap setup-container">
-        <h2>Set Up</h2>
-        <p>Lorem sdygfyuedthrlketn oas fusdhf uerfg ndfuh suifuefh saf hsdfh</p>
+        <h3>Set up our CMS</h3>
+        <p>Below you should enter your database connection details.</p>
         <SetUpForm
           handleSubmit={this.handleSubmit}
           handleInputChange={this.handleInputChange}

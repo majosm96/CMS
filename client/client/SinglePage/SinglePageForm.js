@@ -33,7 +33,7 @@ const SinglePageForm = (props) => {
         />
 
         <div className="btn-submit">
-          <Button basic color="red" size="tiny" type="submit" onClick={props.handleSubmit}>Create page</Button>
+          <button className="btn btn-principal btn-submit-page" type="submit" onClick={props.handleSubmit}>Create page</button>
         </div>
       </div>
     </div>

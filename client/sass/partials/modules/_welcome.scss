@@ -1,5 +1,4 @@
 .welcome-container {
-  border: 1px solid $main-color;
   text-align: center;
 
   @include query(768px) {
@@ -17,15 +16,31 @@
 .welcome-wrap {
   @include query(768px) {
     background-color: #f33333;
+    color: #fff;
     height: 100vh;
-    border: 1px solid #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    h1, p {
+    p {
       color: #fff;
     }
+  }
+}
+
+.welcome-wrap__heading {
+  color: #fff;
+  font-weight: 200;
+}
+
+.welcome-wrap__list {
+  padding: 0;
+  list-style: none;
+
+  li {
+    color: #fff;
+    padding: 3px;
+    font-weight: 800;
+    letter-spacing: 1px;
   }
 }

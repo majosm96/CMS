@@ -3,6 +3,7 @@
   cursor: pointer;
   display: inline-block;
   padding: 0.5rem 2rem;
+  background: transparent;
 
   a {
       border: none;
@@ -14,19 +15,32 @@
 }
 
 .btn-principal {
-  font-weight: 300;
+  font-weight: 200;
+  border: 1.5px solid $main-color;
   display: inline-block;
   margin-top: 25px;
-  text-transform: uppercase;
+  padding: 0.5rem $space-base;
   text-decoration: none;
   transition: all .15s ease 0s;
 
   &:hover {
     color: rgb(255, 255, 255);
+    border: 1.5px solid $main-color;
     background-color: rgb(238, 48, 48);
   }
 }
 
+.btn-submit-page {
+  background-color: transparent;
+  color: $font-color-base;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: .1rem;
+  -webkit-text-decoration-skip: objects;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-font-smoothing: antialiased !important;
+}
 .btn-submit {
   text-align: center;
   padding: $space-base;
