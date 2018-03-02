@@ -1,5 +1,5 @@
 // imports
-import uuid from 'uuid/v1';
+// import uuid from 'uuid/v1';
 
 // API URL Constant
 const API_URL = 'http://localhost:8081/api/v2/setups';
@@ -12,6 +12,11 @@ const ADD_USER_FAILURE = 'ADD_USER_FAILURE';
 const GET_USERS_REQUEST = 'GET_USERS_REQUEST';
 const GET_USERS_SUCCESS = 'GET_USERS_SUCCESS';
 const GET_USERS_FAILURE = 'GET_USERS_FAILURE';
+
+/**
+ * Adds new user
+ * @func
+ */
 
 const addUser = user => (dispatch) => {
   dispatch({
@@ -40,6 +45,10 @@ const addUser = user => (dispatch) => {
 };
 
 
+/**
+ * Gets all the users
+ * @func
+ */
 const getUsers = () => (dispatch) => {
   dispatch({
     type: GET_USERS_REQUEST,
@@ -60,7 +69,7 @@ const getUsers = () => (dispatch) => {
     });
 };
 
-
+/** Export Module */
 module.exports = {
   addUser,
   getUsers,

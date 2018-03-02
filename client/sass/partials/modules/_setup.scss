@@ -1,0 +1,31 @@
+.setup-container {
+  align-items: center;
+  background-color: #eb4848;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+    text-align: center;
+
+    p {
+      color: #fff;
+    }
+}
+
+.setup-input {
+  text-align: center;
+}
+
+.setup-input::placeholder {
+  text-align: center;
+}
+
+.auth {
+  background-color: #fff;
+}
+
+.title-icon--override {
+  border: none;
+  color: #383838;
+  font-weight: 800;
+}

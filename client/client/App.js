@@ -1,16 +1,43 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
+import WelcomeContainer from './Welcome/WelcomeContainer';
 import SetUpContainer from './SetUp/SetUpContainer';
+import LogInContainer from './LogIn/LogInContainer';
+import DashboardContainer from './Dashboard/DashboardContainer';
+import DashboardHomeContainer from './DashboardHome/DashboardHomeContainer';
+import SinglePageContainer from './SinglePage/SinglePageContainer';
+import PostContainer from './Post/PostContainer';
+import SiteContainer from './Site/SiteContainer';
+import AuthContainer from './Auth/AuthContainer';
+
+/**
+ * Represents App
+ * @class
+ * @return Routes of the App
+ */
 
 export default class App extends React.Component {
   render() {
+    // const page = {
+    //   url: 'home2',
+    // };
+    // const newurl = `/site${page.url}`;
     return (
-      <div style={{ textAlign: 'center' }}>
-        <Switch>
-          <Route exact path="/" component={SetUpContainer} />
-          <Route path="/test" render={() => <h1>Im a about page</h1>} />
-        </Switch>
+      <div>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={WelcomeContainer} />
+            <Route path="/SetUp" component={SetUpContainer} />
+            <Route path="/LogIn" component={LogInContainer} />
+            <Route path="/Auth" component={AuthContainer} />
+            <Route path="/Dashboard" component={DashboardContainer} />
+            <Route path="/DashboardHome" component={DashboardHomeContainer} />
+            <Route path="/SinglePage" component={SinglePageContainer} />
+            <Route path="/Posts" component={PostContainer} />
+            <Route path="/Site" component={SiteContainer} />
+          </Switch>
+        </BrowserRouter>
       </div>);
   }
 }

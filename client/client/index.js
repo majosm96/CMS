@@ -4,13 +4,16 @@
 */
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import Semantic from 'semantic-ui-css/semantic.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-
 import store from './store';
 import App from './App';
 
+
+/** Import styles */
+require('../sass/style.scss');
+
+/** Render of the App and it attaches to the DOM */
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>

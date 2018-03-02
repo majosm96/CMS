@@ -1,0 +1,72 @@
+.btn {
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  background: transparent;
+
+  a {
+      border: none;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.btn-principal {
+  font-weight: 200;
+  border: 1.5px solid $main-color;
+  display: inline-block;
+  margin-top: 25px;
+  padding: 0.5rem $space-base;
+  text-decoration: none;
+  transition: all .15s ease 0s;
+
+  &:hover {
+    color: rgb(255, 255, 255);
+    border: 1.5px solid $main-color;
+    background-color: rgb(238, 48, 48);
+  }
+}
+
+.btn-submit-page {
+  background-color: transparent;
+  color: $font-color-base;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: .1rem;
+  -webkit-text-decoration-skip: objects;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.btn-setup {
+  letter-spacing: 1px;
+  background-color: #fff;
+  border: 1.5px solid #272727;
+}
+
+.btn-setup:hover {
+  color: $main-color;
+  background-color: #ffffff;
+  border: 1.5px solid #272727;
+}
+
+.btn-submit {
+  text-align: center;
+  padding: $space-base;
+}
+
+.btn-yellow {
+  box-shadow: 0 0 0 1px #ffe21f inset!important
+}
+
+.btn-blue {
+  box-shadow: 0 0 0 1px #3ac0ff inset!important
+}
+
+.btn-red {
+  box-shadow: 0 0 0 1px #ff5144 inset!important
+}

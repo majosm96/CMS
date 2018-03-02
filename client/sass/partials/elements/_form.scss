@@ -1,0 +1,19 @@
+input,
+textarea,
+select, {
+  font: 1em/1.5 $font-family-base;
+
+}
+
+input::placeholder  {
+  padding: 10px;
+  text-align: center;
+}
+
+.input--space {
+  margin: 0.5rem;
+}
+
+.form-item {
+  display: inline-block
+}
