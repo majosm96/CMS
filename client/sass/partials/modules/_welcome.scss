@@ -29,8 +29,10 @@
 }
 
 .welcome-wrap__heading {
-  color: #fff;
   font-weight: 200;
+  @include query(768px) {
+    color: #fff;
+  }
 }
 
 .welcome-wrap__list {
@@ -38,9 +40,27 @@
   list-style: none;
 
   li {
-    color: #fff;
     padding: 3px;
     font-weight: 800;
     letter-spacing: 1px;
+  }
+
+  @include query(768px) {
+    li {
+      color: #fff;
+    }
+  }
+}
+
+.btn-hidden {
+  @include query(768px) {
+    display: none;
+  }
+}
+
+.wrap--hidden {
+  display: none;
+  @include query(768px) {
+    display: inline-block;
   }
 }

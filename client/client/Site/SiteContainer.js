@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { func, array } from 'prop-types';
 
@@ -34,6 +35,9 @@ class SiteContainer extends Component {
     return (
       <div className="container-fluid">
         <div className="section-wrap section">
+          <div className="dashboard-wrap__link">
+            <Link className="dashboard__a--return" to="/Dashboard">Go to Dashboard</Link>
+          </div>
           <PageGenerator
             pages={this.props.pages}
           />

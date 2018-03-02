@@ -38,6 +38,7 @@ const SetUpForm = props => (
   </div>
 );
 
+
 /** Props Validations */
 SetUpForm.propTypes = {
   handleSubmit: func,

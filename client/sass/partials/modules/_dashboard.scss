@@ -158,4 +158,28 @@
 
 .home-container {
   float: left;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 80%;
+
+  h3 {
+    text-align: center;
+  }
+}
+
+.dashboard__a--return {
+  text-align: left;
+  font-weight: 800;
+}
+
+.dashboard__a--return:hover {
+  border-bottom: 1px solid $main-color;
+}
+
+.dashboard-wrap__link {
+  margin: 0 auto;
+  padding: 1rem 0;
 }

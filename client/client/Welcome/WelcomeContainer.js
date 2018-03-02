@@ -40,10 +40,11 @@ class WelcomeContainer extends Component {
               <li>2. User password</li>
               <li>3. Database name</li>
             </ul>
+            <Link to="/SetUp" className="btn btn-principal btn-hidden">Let's go</Link>
           </div>
-          <div className="col-sm-12 col-md-6 section-wrap" onClick={this.animation.bind(this)} >
+          <div className="col-sm-12 col-md-6 section-wrap wrap--hidden" onClick={this.animation.bind(this)} >
             <div id="animationWindow" />
-            <p>You can build your own web site, just like legos :)</p>
+            <p>You can build your own website, just like legos :)</p>
             <Link to="/SetUp" className="btn btn-principal">Let's go</Link>
           </div>
         </div>
