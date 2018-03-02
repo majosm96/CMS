@@ -62,7 +62,7 @@ class SetUpContainer extends Component {
   render() {
     return (
       <div className="section-wrap setup-container">
-        <h3>Set up our CMS</h3>
+        <h3 className="sidebar__title sidebar__title--logo sidebar__title--logo-dash title-icon--override">Set up our CMS</h3>
         <p>Below you should enter your database connection details.</p>
         <SetUpForm
           handleSubmit={this.handleSubmit}

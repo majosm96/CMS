@@ -60,6 +60,7 @@ class LogInContainer extends Component {
   render() {
     return (
       <div className="section-wrap setup-container">
+        <h3 className="sidebar__title sidebar__title--logo sidebar__title--logo-dash title-icon--override">Now just need Login</h3>
         <LogInForm
           handleSubmit={this.handleSubmit}
           handleInputChange={this.handleInputChange}
@@ -77,7 +78,8 @@ class LogInContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    logIn: state.logIn,
+    logIn: state.LogIn.logIn,
+    token: state.LogIn.token,
   };
 }
 

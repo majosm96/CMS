@@ -34,7 +34,7 @@ class WelcomeContainer extends Component {
         <div className="row welcome-container">
           <div className="col-sm-12 col-md-6 section-wrap welcome-wrap">
             <h1 className="welcome-wrap__heading">Welcome</h1>
-            <p className="welcome-p">Welcome to CMS. Before getting started, we need some information on the database. You will need to know the following items before proceeding.</p>
+            <p className="welcome-p">Welcome to CMS. Before getting started. You will need to give the following items before proceeding.</p>
             <ul className="welcome-wrap__list">
               <li>1. User name</li>
               <li>2. User password</li>

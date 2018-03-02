@@ -14,6 +14,7 @@ const auth = (state = DEFAULT_STATE, action) => {
       return {
         ...state,
         logIn: action.success,
+        userToken: action.token,
       };
     case 'AUTH_USER_FAILURE':
       return {

@@ -9,6 +9,7 @@ import DashboardHomeContainer from './DashboardHome/DashboardHomeContainer';
 import SinglePageContainer from './SinglePage/SinglePageContainer';
 import PostContainer from './Post/PostContainer';
 import SiteContainer from './Site/SiteContainer';
+import AuthContainer from './Auth/AuthContainer';
 
 /**
  * Represents App
@@ -29,6 +30,7 @@ export default class App extends React.Component {
             <Route exact path="/" component={WelcomeContainer} />
             <Route path="/SetUp" component={SetUpContainer} />
             <Route path="/LogIn" component={LogInContainer} />
+            <Route path="/Auth" component={AuthContainer} />
             <Route path="/Dashboard" component={DashboardContainer} />
             <Route path="/DashboardHome" component={DashboardHomeContainer} />
             <Route path="/SinglePage" component={SinglePageContainer} />

@@ -32,7 +32,7 @@ const SetUpForm = props => (
       </div>
 
       <div className="">
-        <Link to="/LogIn" className="btn btn-principal" onClick={props.handleSubmit}>Submit</Link>
+        <Link to="/LogIn" className="btn btn-principal btn-setup" onClick={props.handleSubmit}>Submit</Link>
       </div>
     </div>
   </div>

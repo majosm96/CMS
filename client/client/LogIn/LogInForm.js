@@ -25,7 +25,7 @@ const LogInForm = props => (
       </div>
 
       <div className="form-item">
-        <Link to="/DashboardHome"><Button className="btn-principal" basic color="red" onClick={props.handleSubmit}>Log In</Button></Link>
+        <Link to="/Auth"><button className="btn btn-principal btn-setup" onClick={props.handleSubmit}>Log in</button></Link>
       </div>
     </div>
   </div>
